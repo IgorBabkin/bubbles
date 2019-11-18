@@ -41,16 +41,6 @@ module.exports = {
                 loader: "awesome-typescript-loader"
             },
             {
-                test: /\.(css|scss)$/,
-                use: [{
-                    loader: "style-loader"
-                }, {
-                    loader: "css-loader"
-                }, {
-                    loader: "sass-loader"
-                }]
-            },
-            {
                 test: /\.(jpg|png|svg)$/,
                 use: {
                     loader: "url-loader",
@@ -68,12 +58,6 @@ module.exports = {
             inject: 'body',
         }),
         new HotModuleReplacementPlugin(),
-        new CopyWebpackPlugin([
-            {
-                from: './assets',
-                to: '../'
-            }
-        ]),
         new WebpackNotifierPlugin(),
         new ProgressPlugin()
     ],
